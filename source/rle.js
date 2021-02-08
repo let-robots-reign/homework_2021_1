@@ -5,8 +5,11 @@
  *
  * @param {string} string - what to compress
  * @returns {string|undefined} - compressed string for valid params, otherwise undefined
+ *
+ * @example
+ * // returns 'A3B'
+ * rle('AAAB');
  */
-
 const rle = (string) => {
     if (typeof string !== 'string') {
         return undefined;

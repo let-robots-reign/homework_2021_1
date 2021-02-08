@@ -21,5 +21,5 @@ QUnit.module('Тестируем функцию rle', function () {
 		assert.strictEqual(rle([1, 2, 3]), undefined);
 		assert.strictEqual(rle(undefined), undefined);
 		assert.strictEqual(rle(NaN), undefined);
-	})
+	});
 });
