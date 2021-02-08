@@ -1,5 +1,12 @@
 'use strict';
 
+/**
+ * Realization of Run-length encoding for any given string
+ *
+ * @param {string} string - what to compress
+ * @returns {string|undefined} - compressed string for valid params, otherwise undefined
+ */
+
 const rle = (string) => {
     if (typeof string !== 'string') {
         return undefined;
