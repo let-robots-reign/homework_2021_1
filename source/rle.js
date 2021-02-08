@@ -6,15 +6,13 @@ const rle = (string) => {
     }
     let compressed = '';
     for (let i = 0; i < string.length; ++i) {
+        const currentChar = string.charAt(i);
         let count = 1;
-        for (let j = i; j < string.length; ++j) {
-            if (string.charAt(i) !== string.charAt(j + 1)) {
-                break;
-            }
+        while (i + 1 < string.length && currentChar === string.charAt(i + 1)) {
             ++count;
             ++i;
         }
-        compressed += (count === 1) ? string.charAt(i) : string.charAt(i) + count;
+        compressed += (count === 1) ? currentChar : currentChar + count;
     }
     return compressed;
 }
