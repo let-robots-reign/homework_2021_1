@@ -12,7 +12,7 @@
  */
 const rle = (string) => {
     if (typeof string !== 'string') {
-        return undefined;
+        throw new Error(`Invalid argument: expected string, got ${typeof string}`);
     }
     let compressed = '';
     for (let i = 0; i < string.length; ++i) {
