@@ -12,11 +12,11 @@
  */
 const rle = (string) => {
     if (typeof string !== 'string') {
-        throw new Error(`Invalid argument: expected string, got ${typeof string}`);
+        throw new TypeError(`Invalid argument: expected string, got ${typeof string}`);
     }
     let compressed = '';
     for (let i = 0; i < string.length; ++i) {
-        const currentChar = string.charAt(i);
+        const currentChar = string[i];
         const count = countRecurringChars(string, currentChar, i);
         i += count - 1;
         compressed += (count === 1) ? currentChar : currentChar + count;
@@ -37,9 +37,10 @@ const rle = (string) => {
  */
 const countRecurringChars = (string, char, startIndex) => {
     let count = 1;
-    while (startIndex + 1 < string.length && char === string.charAt(startIndex + 1)) {
+    while (startIndex + 1 < string.length && char === string[startIndex + 1]) {
         ++count;
         ++startIndex;
     }
     return count;
 };
+

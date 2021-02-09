@@ -17,17 +17,9 @@ QUnit.module('Тестируем функцию rle', function () {
     });
 
     QUnit.test('передаются невалидные параметры', function (assert) {
-        assert.throws(() => {
-            rle(10);
-        });
-        assert.throws(() => {
-            assert.throws(rle([1, 2, 3]));
-        });
-        assert.throws(() => {
-            assert.throws(rle(undefined));
-        });
-        assert.throws(() => {
-            assert.throws(rle(NaN));
-        });
+        assert.throws(() => rle(10), TypeError);
+        assert.throws(() => rle([1, 2, 3]), TypeError);
+        assert.throws(() => rle(undefined), TypeError);
+        assert.throws(() => rle(NaN), TypeError);
     });
 });
