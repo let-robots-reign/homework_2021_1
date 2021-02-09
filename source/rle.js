@@ -22,7 +22,7 @@ const rle = (string) => {
         compressed += (count === 1) ? currentChar : currentChar + count;
     }
     return compressed;
-}
+};
 
 /**
  *
@@ -42,4 +42,4 @@ const countRecurringChars = (string, char, startIndex) => {
         ++startIndex;
     }
     return count;
-}
+};
